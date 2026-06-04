@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SecureAgentHub</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="workspace">
+        <header class="topbar">
+          <div>
+            <h1>SecureAgentHub</h1>
+            <p>Enterprise Agent with RAG, tool control, prompt-injection checks, and trace replay.</p>
+          </div>
+          <div class="status" id="status">API 未连接</div>
+        </header>
+
+        <section class="chat-panel">
+          <div class="messages" id="messages" aria-live="polite"></div>
+          <form class="composer" id="chat-form">
+            <textarea
+              id="message-input"
+              rows="3"
+              placeholder="例如：企业 Agent 如何防 Prompt Injection 和工具越权？"
+            ></textarea>
+            <button type="submit">发送</button>
+          </form>
+        </section>
+      </section>
+
+      <aside class="side-panel">
+        <section class="panel-block">
+          <h2>执行链路</h2>
+          <div class="trace-list" id="trace-list"></div>
+        </section>
+        <section class="panel-block">
+          <h2>知识库命中</h2>
+          <div class="rag-list" id="rag-list"></div>
+        </section>
+        <section class="panel-block">
+          <h2>安全判断</h2>
+          <div class="security-box" id="security-box">等待输入</div>
+        </section>
+      </aside>
+    </main>
+    <script src="./app.js"></script>
+  </body>
+</html>
+
